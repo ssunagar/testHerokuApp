@@ -32,15 +32,20 @@ module.exports.connections = {
     adapter: 'sails-disk'
   },
   postresqlDev: {
-   adapter : 'waterline-postgresql',
-   connection : {
-       host : 'localhost',
-       port: '5432',
-       user : 'postgres',
-       password : 'password',
-       database : 'lillyPocEDB2'
-   }
-  }
+    adapter: 'sails-postgresql',
+    url: process.env.DATABASE_URL,
+    pool: true
+}
+/* postresqlDev: {
+ adapter : 'waterline-postgresql',
+ connection : {
+     host : 'localhost',
+     port: '5432',
+     user : 'postgres',
+     password : 'password',
+     database : 'lillyPocEDB2'
+ }
+} */
   /***************************************************************************
   *                                                                          *
   * MySQL is the world's most popular relational database.                   *
